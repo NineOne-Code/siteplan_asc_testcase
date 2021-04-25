@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "264015049684",
+    "project_id": "test-case-asc",
+    "storage_bucket": "test-case-asc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264015049684:android:a391fd393bb030c0835c41",
+        "android_client_info": {
+          "package_name": "com.example.siteplan_asc_testcase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264015049684-tafbornl33r7l72rjiq9b7c17d38852c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAlAqfM-Bx2k-BFypypuHnJ816QsD5giI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264015049684-tafbornl33r7l72rjiq9b7c17d38852c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
