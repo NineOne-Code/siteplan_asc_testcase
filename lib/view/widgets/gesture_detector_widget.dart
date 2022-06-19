@@ -22,7 +22,7 @@ class RemoveScrollGlow extends ScrollBehavior {
 
 class GestureDetectorWidget extends StatelessWidget {
   final Widget child;
-  GestureDetectorWidget({this.child});
+  GestureDetectorWidget({required this.child});
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;

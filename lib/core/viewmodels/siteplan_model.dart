@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:siteplan_asc_testcase/core/models/models.dart';
 import 'package:siteplan_asc_testcase/view/shared/global.dart';
 
@@ -99,9 +98,7 @@ class SitePlanModel extends ChangeNotifier {
         .get()
         .then((querySnapshot) {
       id = querySnapshot.docs[0].id;
-      kavling
-          .doc(id)
-          .update({'status': !querySnapshot.docs[0].data()["status"]});
+      kavling.doc(id).update({'status': !querySnapshot.docs[0].get("status")});
       notifyListeners();
     }).catchError((onError) => print("error: $onError"));
   }

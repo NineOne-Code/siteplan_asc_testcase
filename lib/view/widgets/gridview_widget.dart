@@ -10,11 +10,11 @@ class GridViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     final model = Provider.of<SitePlanModel>(context);
-    return StreamBuilder(
+    return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
       stream: FirebaseFirestore.instance.collection('kavling').snapshots(),
       builder: (_, snapshot) {
         if (snapshot.hasData) {
-          final temp = snapshot.data.docs.map<dynamic>((e) => e);
+          final temp = snapshot.data?.docs.map<dynamic>((e) => e);
           model.zones = temp;
           return Stack(
             alignment: Alignment.center,
@@ -37,12 +37,12 @@ class GridViewWidget extends StatelessWidget {
                     children: List.generate(tileZone.length, (idx) {
                       return Transform.translate(
                         offset: Offset(
-                          size.width * tileZone[idx].position[0],
-                          size.width * tileZone[idx].position[1],
+                          size.width * tileZone[idx].position?[0],
+                          size.width * tileZone[idx].position?[1],
                         ),
                         child: Stack(
                           children: <Widget>[
-                            tileZone[idx].status
+                            tileZone[idx].status ?? false
                                 ? Container(
                                     color: Colors.red,
                                   )
@@ -50,7 +50,7 @@ class GridViewWidget extends StatelessWidget {
                                     transform: Matrix4.identity()
                                       ..translate(0.0),
                                     child: Text(
-                                      tileZone[idx].name,
+                                      tileZone[idx].name ?? 'X',
                                       style: TextStyle(
                                           fontSize: 6,
                                           color:

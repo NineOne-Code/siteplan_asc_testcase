@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:siteplan_asc_testcase/core/viewmodels/siteplan_model.dart';
 import 'package:siteplan_asc_testcase/view/screens/siteplan_screen.dart';
+import 'package:siteplan_asc_testcase/wrapper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: SitePlanScreen(),
+        home: Wrapper(),
       ),
     );
   }
